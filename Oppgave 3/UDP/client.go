@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net"
 	"time"
+	"./encryption"
 )
 
 func main() {
@@ -21,10 +22,12 @@ func main() {
 	for {
 		msg := "Møte Fr 5.5 14:45 Flåklypa"
 		i++
-		buf := []byte(msg)
-		_,err := Conn.Write(buf)
+		encryptedMessage := encryption.EncryptMessage(msg)
+
+		//buf := []byte(msg)
+		_,err := Conn.Write(encryptedMessage)
 		if err != nil {
-			fmt.Println(msg, err)
+			fmt.Println(encryptedMessage, err)
 		}
 		time.Sleep(time.Second * 1)
 	}

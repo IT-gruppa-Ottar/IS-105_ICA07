@@ -5,17 +5,7 @@ import (
 	"crypto/cipher"
 )
 
-//func main() {
-	//Forutsetter at begge parter har samme nøkkel og cipthertest
-
-
-	//Krypterer input og returnerer den krypterte meldingen
-	//message := encryptMessage("Hei, er denne linjen sikker?")
-
-	//Tar den krypterte meldingen som input og skriver ut meldingen som blir sent.
-	//decryptMessage(message)
-//}
-
+//noinspection GoUnusedExportedFunction
 func EncryptMessage(message string)[]byte{
 	//Her er nøkkelen som begge parter må ha
 	block,err := aes.NewCipher([]byte("opensesame123456"))
@@ -38,7 +28,7 @@ func EncryptMessage(message string)[]byte{
 	return encrypted
 }
 
-
+//noinspection GoUnusedExportedFunction
 func DecryptMessage(encrypted []byte) []byte{
 	block,err := aes.NewCipher([]byte("opensesame123456"))
 

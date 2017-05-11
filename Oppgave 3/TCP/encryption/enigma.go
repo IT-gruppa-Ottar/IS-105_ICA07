@@ -5,7 +5,7 @@ import (
 	"crypto/cipher"
 )
 
-
+//noinspection GoUnusedExportedFunction
 func EncryptMessage(message string)[]byte{
 	//Her er nøkkelen som begge parter må ha
 	block,err := aes.NewCipher([]byte("opensesame123456"))
@@ -28,7 +28,7 @@ func EncryptMessage(message string)[]byte{
 	return encrypted
 }
 
-
+//noinspection GoUnusedExportedFunction
 func DecryptMessage(encrypted []byte) []byte{
 	block,err := aes.NewCipher([]byte("opensesame123456"))
 
