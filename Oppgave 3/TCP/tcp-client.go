@@ -5,7 +5,7 @@ import "fmt"
 import "bufio"
 import (
 	"os"
-
+	"./encryption"
 )
 
 func main() {
@@ -21,6 +21,7 @@ func main() {
 		fmt.Print("Text to send: ")
 
 		text, _ := reader.ReadString('\n')
+
 		// send to socket
 		fmt.Fprintf(conn, text + "\n")
 		// listen for reply
