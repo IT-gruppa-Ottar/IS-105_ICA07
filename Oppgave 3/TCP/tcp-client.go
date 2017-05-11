@@ -21,7 +21,7 @@ func main() {
 		fmt.Print("Text to send: ")
 
 		text, _ := reader.ReadString('\n')
-
+		encryption.
 		// send to socket
 		fmt.Fprintf(conn, text + "\n")
 		// listen for reply
