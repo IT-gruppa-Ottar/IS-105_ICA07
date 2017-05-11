@@ -4,15 +4,10 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"./encryption"
 )
 
-/* A Simple function to verify error */
-func CheckError(err error) {
-	if err  != nil {
-		fmt.Println("Error: " , err)
-		os.Exit(0)
-	}
-}
+
 
 func main() {
 	/* Lets prepare a address at any address at port 10001*/
@@ -26,12 +21,21 @@ func main() {
 
 	buf := make([]byte, 1024)
 
-	for {
-		n,addr,err := ServerConn.ReadFromUDP(buf)
-		fmt.Println("Received ",string(buf[0:n]), " from ",addr)
+	n,addr,err := ServerConn.ReadFromUDP(buf)
 
-		if err != nil {
-			fmt.Println("Error: ",err)
-		}
+	decryptedMessage := encryption.DecryptMessage(buf)
+
+	fmt.Println("Received ",string(decryptedMessage[0:n]), " from ",addr)
+
+	if err != nil {
+		fmt.Println("Error: ",err)
+	}
+}
+
+/* A Simple function to verify error */
+func CheckError(err error) {
+	if err  != nil {
+		fmt.Println("Error: " , err)
+		os.Exit(0)
 	}
 }
