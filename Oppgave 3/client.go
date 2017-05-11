@@ -1,10 +1,10 @@
 package main
 
-import "net"
-import "fmt"
-import "bufio"
 import (
+	"net"
+	"bufio"
 	"os"
+	"fmt"
 	"./encryption"
 )
 
@@ -21,11 +21,14 @@ func main() {
 		fmt.Print("Text to send: ")
 
 		text, _ := reader.ReadString('\n')
-		encryption.
+
+		convert := encryption.EncryptMessage(text)
+		send := string(convert)
+
 		// send to socket
-		fmt.Fprintf(conn, text + "\n")
+		fmt.Fprintf(conn, send + "\n")
 		// listen for reply
-		message, _ := bufio.NewReader(conn).ReadString('\n')
-		fmt.Print("Message from server: "+message)
+		//message, _ := bufio.NewReader(conn).ReadString('\n')
+		//fmt.Print("Message from server: "+message)
 	}
 }

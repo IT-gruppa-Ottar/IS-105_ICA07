@@ -1,23 +1,22 @@
-package main
+package encryption
 
 import (
 	"crypto/aes"
-	"fmt"
 	"crypto/cipher"
 )
 
-func main() {
+//func main() {
 	//Forutsetter at begge parter har samme nøkkel og cipthertest
 
 
 	//Krypterer input og returnerer den krypterte meldingen
-	message := encryptMessage("Hei, er denne linjen sikker?")
+	//message := encryptMessage("Hei, er denne linjen sikker?")
 
 	//Tar den krypterte meldingen som input og skriver ut meldingen som blir sent.
-	decryptMessage(message)
-}
+	//decryptMessage(message)
+//}
 
-func encryptMessage(message string)[]byte{
+func EncryptMessage(message string)[]byte{
 	//Her er nøkkelen som begge parter må ha
 	block,err := aes.NewCipher([]byte("opensesame123456"))
 
@@ -40,7 +39,7 @@ func encryptMessage(message string)[]byte{
 }
 
 
-func decryptMessage(encrypted []byte){
+func DecryptMessage(encrypted []byte) []byte{
 	block,err := aes.NewCipher([]byte("opensesame123456"))
 
 	if err != nil {
@@ -55,5 +54,6 @@ func decryptMessage(encrypted []byte){
 	decrypted := make([]byte, len(encrypted))
 	decrypter.XORKeyStream(decrypted, encrypted)
 
-	fmt.Printf("RECIVED: %s\n", decrypted)
+	//fmt.Printf("RECIVED: %s\n", decrypted)
+	return decrypted
 }
