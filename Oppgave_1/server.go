@@ -1,3 +1,6 @@
+/**
+Hentet fra: https://varshneyabhi.wordpress.com/2014/12/23/simple-udp-clientserver-in-golang/
+ */
 package main
 
 import (
@@ -6,6 +9,9 @@ import (
 	"os"
 )
 
+/**
+Oppretter en server som venter på meldingen fra "client.go"
+ */
 func main() {
 	/* Lets prepare a address at any address at port 10001*/
 	ServerAddr,err := net.ResolveUDPAddr("udp",":10001")

@@ -1,3 +1,6 @@
+/**
+Hentet fra: https://varshneyabhi.wordpress.com/2014/12/23/simple-udp-clientserver-in-golang/
+ */
 package main
 
 import (
@@ -6,6 +9,9 @@ import (
 	"time"
 )
 
+/**
+Lager en client som sender meldingen "Møte Fr 5.5 14:45 Flåklypa" til "server.go"
+ */
 func main() {
 	ServerAddr,err := net.ResolveUDPAddr("udp","127.0.0.1:10001")
 	checkError(err)

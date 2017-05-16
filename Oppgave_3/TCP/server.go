@@ -1,17 +1,17 @@
-package TCP
+/**
+Hentet fra: https://systembash.com/a-simple-go-tcp-server-and-tcp-client/
+*/
+package main
 
 import (
 	"fmt"
 	"net"
 	"bufio"
-	//"strings"
 	"./encryption"
-)// only needed below for sample processing
+)
 
 func main() {
-
 	// Server
-
 	fmt.Println("Launching server...")
 
 	// listen on all interfaces
