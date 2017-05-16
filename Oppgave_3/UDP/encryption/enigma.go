@@ -1,3 +1,6 @@
+/**
+Hentet fra: https://www.socketloop.com/tutorials/golang-how-to-encrypt-with-aes-crypto
+ */
 package encryption
 
 import (
@@ -17,6 +20,7 @@ func EncryptMessage(message string)[]byte{
 	str := []byte(message)
 
 	// 16 bytes for AES-128, 24 bytes for AES-192, 32 bytes for AES-256
+	//Bruk difi harman her
 	ciphertext := []byte("abcdef1234567890")
 	iv := ciphertext[:aes.BlockSize] // const BlockSize = 16
 

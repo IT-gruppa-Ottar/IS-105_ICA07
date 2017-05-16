@@ -1,4 +1,7 @@
-package TCP
+/**
+Hentet fra: https://systembash.com/a-simple-go-tcp-server-and-tcp-client/
+*/
+package main
 
 import (
 	"net"
@@ -9,10 +12,7 @@ import (
 )
 
 func main() {
-
-
 	// Client
-
 	// connect to this socket
 	conn, _ := net.Dial("tcp", "127.0.0.1:8081")
 	for {

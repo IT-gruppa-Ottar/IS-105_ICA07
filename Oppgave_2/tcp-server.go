@@ -1,18 +1,17 @@
+/**
+Hentet fra: https://systembash.com/a-simple-go-tcp-server-and-tcp-client/
+*/
 package main
 
-import "net"
-import "fmt"
-import "bufio"
 import (
+	"fmt"
+	"net"
+	"bufio"
 	"strings"
-	"crypto/aes"
-	"crypto/cipher"
-) // only needed below for sample processing
+)
 
 func main() {
-	
 	// Server
-
 	fmt.Println("Launching server...")
 
 	// listen on all interfaces

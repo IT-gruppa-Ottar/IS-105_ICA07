@@ -1,3 +1,6 @@
+/**
+Hentet fra: https://www.socketloop.com/tutorials/golang-how-to-encrypt-with-aes-crypto
+ */
 package encryption
 
 import (

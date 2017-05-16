@@ -1,3 +1,6 @@
+/**
+Hentet fra: https://varshneyabhi.wordpress.com/2014/12/23/simple-udp-clientserver-in-golang/
+ */
 package main
 
 import (
@@ -6,8 +9,6 @@ import (
 	"os"
 	"./encryption"
 )
-
-
 
 func main() {
 	/* Lets prepare a address at any address at port 10001*/

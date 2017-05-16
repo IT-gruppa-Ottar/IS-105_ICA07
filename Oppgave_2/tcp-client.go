@@ -1,16 +1,16 @@
+/**
+Hentet fra: https://systembash.com/a-simple-go-tcp-server-and-tcp-client/
+*/
 package main
 
-import "net"
-import "fmt"
-import "bufio"
 import (
+	"net"
+	"bufio"
 	"os"
-
+	"fmt"
 )
 
 func main() {
-
-
 	// Client
 
 	// connect to this socket
@@ -25,6 +25,6 @@ func main() {
 		fmt.Fprintf(conn, text + "\n")
 		// listen for reply
 		message, _ := bufio.NewReader(conn).ReadString('\n')
-		fmt.Print("Message from server: "+message)
+		fmt.Print("Message from server: "+ message)
 	}
 }
